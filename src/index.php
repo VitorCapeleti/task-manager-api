@@ -31,7 +31,7 @@
         </div>
     </form>
     <div class="read">
-        <a href="read.php"><button>Listar</button></a>
+        <a href="list.php"><button>Listar</button></a>
     </div>
     </div>
 </body>
