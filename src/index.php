@@ -30,6 +30,9 @@
             <input type="submit" name="Cadastrar" value="Cadastrar">
         </div>
     </form>
+    <div class="read">
+        <a href="read.php"><button>Listar</button></a>
+    </div>
     </div>
 </body>
 </html>

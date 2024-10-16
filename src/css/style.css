@@ -6,7 +6,7 @@ body{
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -51,4 +51,20 @@ body{
     color: aliceblue;
     font-weight: bolder;
     padding: 15px;
+    cursor: pointer;
 }
+.read{
+    padding: 15px;
+}
+.read button{
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: blueviolet;
+    color: aliceblue;
+    font-weight: bolder;
+    padding: 15px;
+    cursor: pointer;
+}
+
