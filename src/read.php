@@ -2,7 +2,6 @@
 require_once 'connection.php';
 $conexao = new connectionClass();
 $resultado = $conexao->ConectarBD();
-$dados = array();
 class Read{
     private $connection;
     public function __construct($connection){
