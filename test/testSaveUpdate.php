@@ -12,7 +12,8 @@ class TestSave{
         $this->connection = $connection;
     }
     public function testSave(){
-            $queryEmail = "SELECT email_var_user FROM user ORDER BY id_int_user DESC LIMIT 1";
+            $email = $_SESSION['email'];
+            $queryEmail = "SELECT email_var_user FROM user WHERE email_var_user = '$email'";
             $busacaEmail = mysqli_query($this->connection, $queryEmail);
             $verifica = mysqli_num_rows($busacaEmail);
             if($verifica == 1){
