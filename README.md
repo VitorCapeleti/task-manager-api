@@ -2,7 +2,8 @@
 Este projeto é uma API para o gerenciamento de cadastros, listando usuários e com funcionalidades de criação, leitura, atualização e exclusão (CRUD). Ele foi desenvolvido como parte de um projeto acadêmico para aplicar os conceitos de gestão ágil utilizando práticas do Lean.
 
 ## Objetivo
-O objetivo deste projeto foi aplicar os conceitos de gestão ágil no desenvolvimento de software. A API com PHP permite que os usuários adicionem, visualizem, editem e excluam contas cadastradas, priorizando a simplicidade e eficiência no desenvolvimento.
+Nosso projeto aplicou os conceitos de gestão ágil no desenvolvimento de software, criando uma API com PHP para conversar com o banco de dados e permitir que os usuários adicionem, visualizem, editem e excluam contas cadastradas, priorizando a simplicidade e eficiência no desenvolvimento.
+
 
 ## Tecnologias Utilizadas
 PHP: Linguagem de programação principal usada para criar a API.
