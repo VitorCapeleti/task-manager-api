@@ -14,11 +14,8 @@ Kanban: Metodologia de organização do trabalho com colunas para o progresso da
 ## Estrutura do Projeto
 /src: Contém os códigos base do projeto.
 /test: Contém os testes automatizados.
-Funcionalidades Principais (MVP)
-Criar tarefas.
-Visualizar tarefas.
-Atualizar tarefas.
-Deletar tarefas.
+/css: Contém o arquivo de estilização.
+/db: Contém o arquivo .sql do banco de dados.
 
 ## Como Rodar o Projeto
 Clone o repositório.
