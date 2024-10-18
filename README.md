@@ -1,7 +1,7 @@
 # Task Manager API
 Este projeto é uma API para o gerenciamento de tarefas, com funcionalidades de criação, leitura, atualização e exclusão (CRUD). Ele foi desenvolvido como parte de um projeto acadêmico para aplicar os conceitos de gestão ágil utilizando práticas do Lean.
 
-# Objetivo
+## Objetivo
 O objetivo deste projeto é criar uma API mínima viável (MVP) para gerenciar tarefas, seguindo uma abordagem ágil. A API permite que os usuários adicionem, visualizem, editem e excluam tarefas, priorizando a simplicidade e eficiência no desenvolvimento.
 
 ## Tecnologias Utilizadas
@@ -19,9 +19,10 @@ Criar tarefas.
 Visualizar tarefas.
 Atualizar tarefas.
 Deletar tarefas.
-Como Rodar o Projeto
+
+## Como Rodar o Projeto
 Clone o repositório.
-Configure o banco de dados MySQL utilizando os scripts fornecidos.
+Configure o banco de dados MySQL importando o arquivo crud.sql na pasta /db.
 Inicie o servidor local e acesse o front-end da aplicação via navegador.
 
 
