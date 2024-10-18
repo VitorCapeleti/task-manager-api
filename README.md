@@ -1,8 +1,8 @@
 # Task Manager API
-Este projeto é uma API para o gerenciamento de tarefas, com funcionalidades de criação, leitura, atualização e exclusão (CRUD). Ele foi desenvolvido como parte de um projeto acadêmico para aplicar os conceitos de gestão ágil utilizando práticas do Lean.
+Este projeto é uma API para o gerenciamento de cadastros, listando usuários e com funcionalidades de criação, leitura, atualização e exclusão (CRUD). Ele foi desenvolvido como parte de um projeto acadêmico para aplicar os conceitos de gestão ágil utilizando práticas do Lean.
 
 ## Objetivo
-O objetivo deste projeto é criar uma API mínima viável (MVP) para gerenciar tarefas, seguindo uma abordagem ágil. A API permite que os usuários adicionem, visualizem, editem e excluam tarefas, priorizando a simplicidade e eficiência no desenvolvimento.
+O objetivo deste projeto foi aplicar os conceitos de gestão ágil no desenvolvimento de software. A API com PHP permite que os usuários adicionem, visualizem, editem e excluam contas cadastradas, priorizando a simplicidade e eficiência no desenvolvimento.
 
 ## Tecnologias Utilizadas
 PHP: Linguagem de programação principal usada para criar a API.
