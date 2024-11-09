@@ -1,9 +1,15 @@
 <?php
-require_once '../src/connection.php';
+require_once __DIR__ . '/../src/connectionForTest.php';
 $conexao = new connectionClass();
 $resultado = $conexao->ConectarBD();
 
-assert($resultado instanceof mysqli, 'A conexão com o Banco de dados falhou');
-echo'TESTE PASSOU';
+$result =  assert($resultado instanceof mysqli, 'A conexão com o Banco de dados falhou');
+if($result == 1){
+    echo"Connection test passed. \n";
+    exit(0);
+}else{
+    echo"Connection test failed. \n";
+    exit(1);
+}
 
 ?>
