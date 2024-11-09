@@ -12,6 +12,22 @@ jobs:
   php-tests:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root_password
+          MYSQL_DATABASE: crud
+          MYSQL_USER: test_user
+          MYSQL_PASSWORD: test_password
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+        ports:
+          - 3306:3306
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -19,9 +35,34 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1' 
+          php-version: '8.1'
+
+      - name: Install MySQL client
+        run: sudo apt-get install -y default-mysql-client
+
+      - name: Wait for MySQL
+        run: |
+          until mysqladmin ping -h"127.0.0.1" --silent; do
+            echo "Waiting for database connection..."
+            sleep 5
+          done
+
+      - name: Set up database
+        env:
+          DB_HOST: 127.0.0.1
+          DB_USER: test_user
+          DB_PASSWORD: test_password
+          DB_NAME: crud
+        run: |
+          mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
+          mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME < src/your_schema.sql
 
       - name: Run Read Test
-        run: php src/readTest.php 
+        env:
+          DB_HOST: 127.0.0.1
+          DB_USER: test_user
+          DB_PASSWORD: test_password
+          DB_NAME: crud
+        run: php src/readTest.php
 
 
