@@ -6,7 +6,7 @@ class connectionClass {
     private $bdname;
 
     public function __construct() {
-        // Pega as configurações do banco de dados a partir de variáveis de ambiente
+        // Pega as configurações do banco de dados a partir de variáveis de ambiente, não funcionou para o teste de conexão
         $this->localhost = getenv('DB_HOST') ?: '127.0.0.1';
         $this->username = getenv('DB_USER') ?: 'root';
         $this->password = getenv('DB_PASSWORD') ?: '';

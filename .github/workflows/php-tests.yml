@@ -93,3 +93,11 @@ jobs:
         #executa o teste de conexão segundo teste a ser realizado
       - name: Run Connection Test
         run: php test/testConnection.php
+        #executa o teste de insert
+      - name: Run Insert Test
+        env:
+          DB_HOST: 127.0.0.1
+          DB_USER: test_user
+          DB_PASSWORD: test_password
+          DB_NAME: crud
+        run: php test/insertForTest.php

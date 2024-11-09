@@ -1,9 +1,11 @@
 <?php
+//como o teste vai ser realizado na máquina virtual, eu tenho que definir as mesmas variáveis criada para o teste no yml
+//por isso criei um novo connection, com a mesma função original, porém definindo as variáveis
 class connectionClass {
-    private $localhost = "127.0.0.1";  // ou 'localhost', se for local
-    private $username = "test_user";    // Usuário de teste do banco de dados
-    private $password = "test_password"; // Senha de autenticação para o usuário
-    private $bdname = "crud";          // Nome do banco de dados
+    private $localhost = "127.0.0.1";  
+    private $username = "test_user";    
+    private $password = "test_password"; 
+    private $bdname = "crud";  
 
     public function ConectarBD() {
         $connection = new mysqli($this->localhost, $this->username, $this->password, $this->bdname);
