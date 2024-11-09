@@ -22,6 +22,6 @@ jobs:
           php-version: '8.1' 
 
       - name: Run Insert Test
-        run: php ../test/insert.php 
+        run: php /task-manager-api/test/insert.php 
 
 
