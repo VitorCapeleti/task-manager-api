@@ -89,4 +89,7 @@ jobs:
           DB_PASSWORD: test_password
           DB_NAME: crud
         run: php test/readTest.php
-
+        
+        #executa o teste de conexão segundo teste a ser realizado
+      - name: Run Connection Test
+        run: php test/testConnection.php
