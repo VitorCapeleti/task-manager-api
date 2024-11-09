@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../src/connection.php';
+require_once __DIR__ . '/../src/connectionForTest.php';
 $conexao = new connectionClass();
 $resultado = $conexao->ConectarBD();
 
