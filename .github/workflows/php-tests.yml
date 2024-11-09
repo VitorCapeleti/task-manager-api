@@ -57,6 +57,17 @@ jobs:
           mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
           mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME < src/schema.sql
 
+      - name: Insert test data
+        env:
+          DB_HOST: 127.0.0.1
+          DB_USER: test_user
+          DB_PASSWORD: test_password
+          DB_NAME: crud
+        run: |
+          mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME -e "
+          INSERT INTO user (nome_var_user, email_var_user, password_var_user) 
+          VALUES ('Test User', 'test@example.com', 'password123');"
+
       - name: Run Read Test
         env:
           DB_HOST: 127.0.0.1
