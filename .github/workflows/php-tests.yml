@@ -1,5 +1,6 @@
+#Nome do projeto
 name: PHP Custom Tests
-
+#Como visto na aula, ao realizar algumas dessas funções push ou pull_request na main, ele vai executar o teste
 on:
   push:
     branches:
@@ -8,10 +9,15 @@ on:
     branches:
       - main
 
+#Nesta parte ele define que o trabalho será rodada em uma máquina virtual ubuntu na sua última versão, como no exemplo da aula
 jobs:
   php-tests:
     runs-on: ubuntu-latest
 
+#Aqui são os servicos adicionais que precisaram ser usados no teste
+#no mysql define qual versão vamos usar mysql:8.0
+#env define quais variáveis do ambiente de teste serão neceesárias como a senha do usuario local, nome do banco, usuario que ira user, e senha do user
+#no options ele verifica se o mysql estará pronto para receber conexões
     services:
       mysql:
         image: mysql:8.0
@@ -29,17 +35,21 @@ jobs:
           - 3306:3306
 
     steps:
+        #traz a última versão do código para o teste no workflows
       - name: Checkout code
         uses: actions/checkout@v2
 
+        #configura no ambiente virtual a versão do php que terá de ser utilizado 8.1
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
 
+        #instala o cliente mysql na maquina do Git Hub Actions para interagir com o banco de dados
       - name: Install MySQL client
         run: sudo apt-get install -y default-mysql-client
 
+        #Esse passo garante que o banco de dados mmysql esteja pronto para aceitar conexões antes de ser utilizado
       - name: Wait for MySQL
         run: |
           until mysqladmin ping -h"127.0.0.1" --silent; do
@@ -47,6 +57,8 @@ jobs:
             sleep 5
           done
 
+        #define as variáveis de ambiente que serão utilizadas para criar o banco de dados 
+        #caso não esteja criado a tabela user ainda, ele vai até o arquivo schema.sql e cria o banco de dados
       - name: Set up database
         env:
           DB_HOST: 127.0.0.1
@@ -55,8 +67,9 @@ jobs:
           DB_NAME: crud
         run: |
           mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
-          mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME < src/schema.sql
+          mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME < test/schema.sql
 
+        #faz um inserção na máquina virtual antes de realizar o teste
       - name: Insert test data
         env:
           DB_HOST: 127.0.0.1
@@ -68,10 +81,12 @@ jobs:
           INSERT INTO user (nome_var_user, email_var_user, password_var_user) 
           VALUES ('Test User', 'test@example.com', 'password123');"
 
+        #executa o teste de read
       - name: Run Read Test
         env:
           DB_HOST: 127.0.0.1
           DB_USER: test_user
           DB_PASSWORD: test_password
           DB_NAME: crud
-        run: php src/readTest.php
+        run: php test/readTest.php
+

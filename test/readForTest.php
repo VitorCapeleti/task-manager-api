@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once '../src/connection.php';
 $connObj = new connectionClass();
 $connection = $connObj->ConectarBD();
 
