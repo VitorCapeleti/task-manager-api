@@ -113,7 +113,7 @@
         <form action="" method="post" class="box">
         <h1>Tem certeza que deseja excluir?</h1>
             <div class="elementstxt">
-                <input type="text" name="id" value="<?php echo $_GET['id']?>" >
+                <input type="text" name="id" value="<?php echo $_GET['id']?>" style="display:none;">
             </div>
             <div class="elements">
                 <input type="submit" name="Delete" value="Sim">
