@@ -13,7 +13,6 @@ class Delete{
             $id = $_POST['id'];
             $sql_code = "SELECT * FROM users WHERE id='$id'";
             $sql_query = $this->connection->query($sql_code) or die("Erro no código sql");
-            $usuario = $sql_query->fetch_assoc();
             $sql = "DELETE FROM users WHERE id = '$id'";
             $exquery = $this->connection->query($sql);
             if ($exquery === TRUE) {
