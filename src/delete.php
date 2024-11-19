@@ -26,7 +26,7 @@ class Delete{
             $sql = "DELETE FROM users WHERE id = '$id'";
             $exquery = $this->connection->query($sql);
             if ($exquery === TRUE) {
-                header('Location: /var/www/html/list.php');
+                header(sprintf('location: %s', $_SERVER['HTTP_REFERER']));
                 return true;
             } else {
                 echo "Erro ao excluir usuário: " . $this->connection->error;

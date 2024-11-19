@@ -27,7 +27,7 @@ class SaveUpdate {
                     #    session_start();
                     #}
                     #$_SESSION['email'] = $usuario['email'];
-                    header('Location: /var/www/html/list.php');
+                    header(sprintf('location: %s', $_SERVER['HTTP_REFERER']));
                     return $excuteQuerySave;
                 }
             }else{
