@@ -18,8 +18,11 @@ class SaveUpdate {
                 $sql_code = "SELECT email FROM users WHERE email='$email'";
                 $sql_query = $this->connection->query($sql_code) or die("Erro no código sql");
                 if($sql_query == true){
-                    header('Location: list.php');
+                    echo '<script>
+                        window.location.href = "list.php";
+                    </script>';
                     exit();
+                    
                 }
             }else{
                 return false;

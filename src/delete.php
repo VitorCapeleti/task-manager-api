@@ -17,8 +17,11 @@ class Delete{
             $sql = "DELETE FROM users WHERE id = '$id'";
             $exquery = $this->connection->query($sql);
             if ($exquery === TRUE) {
-                header('Location: list.php');
+                echo '<script>
+                    window.location.href = "list.php";
+                </script>';
                 exit();
+                
             } else {
                 echo "Erro ao exclui usuário: " . $this->connection->error;
             }  
