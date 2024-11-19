@@ -18,18 +18,18 @@ class Delete{
             $sql_code = "SELECT * FROM users WHERE id='$id'";
             $sql_query = $this->connection->query($sql_code) or die("Erro no código sql");
             $usuario = $sql_query->fetch_assoc();
-            if(!isset($_SESSION)){
-                session_start();
-            }
-            $_SESSION['id'] = $usuario['id'];
+            #if(!isset($_SESSION)){
+             #   session_start();
+            #}
+            #$_SESSION['id'] = $usuario['id'];
 
             $sql = "DELETE FROM users WHERE id = '$id'";
             $exquery = $this->connection->query($sql);
             if ($exquery === TRUE) {
-                header('Location: list.php');
+                header('Location: /var/www/html/list.php');
                 return true;
             } else {
-                echo "Erro ao inserir usuário: " . $this->connection->error;
+                echo "Erro ao excluir usuário: " . $this->connection->error;
                 //return false;
             }
             

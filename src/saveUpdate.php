@@ -23,11 +23,11 @@ class SaveUpdate {
                 $quantidade = $sql_query->num_rows;
                 if($quantidade == 1){
                     $usuario = $sql_query->fetch_assoc();
-                    if(!isset($_SESSION)){
-                        session_start();
-                    }
-                    $_SESSION['email'] = $usuario['email'];
-                    header('Location: list.php');
+                    #if(!isset($_SESSION)){
+                    #    session_start();
+                    #}
+                    #$_SESSION['email'] = $usuario['email'];
+                    header('Location: /var/www/html/list.php');
                     return $excuteQuerySave;
                 }
             }else{
