@@ -23,7 +23,7 @@
         <form action="" method="post" class="box">
         <h1>Tem certeza que deseja excluir?</h1>
             <div class="elementstxt">
-                <input type="text" name="id" value="<?php echo $user_data['id_int_user']?>" style="display:none;">
+                <input type="text" name="id" value="<?php echo $user_data['id']?>" style="display:none;">
             </div>
             <div class="elements">
                 <input type="submit" name="Delete" value="Sim">

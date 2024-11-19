@@ -8,7 +8,7 @@ class Read{
         $this->connection = $connection;
     }
     public function listarUsuario(){
-            $query = "SELECT * FROM user ORDER BY id_int_user DESC";
+            $query = "SELECT * FROM users ORDER BY id DESC";
             $excuteQuery = $this->connection->query($query);
             $verifica = mysqli_num_rows($excuteQuery);
             if($verifica >= 1){

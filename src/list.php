@@ -41,8 +41,8 @@
                 while($user_data = mysqli_fetch_assoc($value )){
                     echo"<tr>";
                     echo"<th scope=\"col\">".$user_data['id_int_user']."</th>";
-                    echo"<th>".$user_data['nome_var_user']."</th>";
-                    echo"<th>".$user_data['email_var_user']."</th>";
+                    echo"<th>".$user_data['nome']."</th>";
+                    echo"<th>".$user_data['email']."</th>";
                     //echo"<th>".$user_data['password_var_user']."</th>";
                     echo"<th style=\"text-align:center;\">
                             <a class='btn btn-primary' href='edit.php?id=$user_data[id_int_user]'>

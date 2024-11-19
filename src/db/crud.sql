@@ -24,21 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `user`
+-- Estrutura da tabela `users`
 --
 
-CREATE TABLE `user` (
-  `id_int_user` int(11) NOT NULL,
-  `nome_var_user` varchar(50) NOT NULL,
-  `email_var_user` varchar(50) NOT NULL,
-  `password_var_user` varchar(255) NOT NULL
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `user`
+-- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `user` (`id_int_user`, `nome_var_user`, `email_var_user`, `password_var_user`) VALUES
+INSERT INTO `users` (`id`, `nome`, `email`, `senha`) VALUES
 (1, 'Vitor', 'vitor@gmail.com', '123'),
 (2, 'Vitor', 'teste@gmail.com', '$2y$10$HPbGuF8P6BVdjXmsnGBhreLPK3//o1A99GNcGI9xePyhOvhkFaJ9e'),
 (3, 'teste1', 'teste1@gmail.com', '$2y$10$3SbkiA9gE21hZY6WTvdC2unC52OPiNWCZ94LCyxZD5nmQe9/tl20G'),
@@ -49,20 +49,20 @@ INSERT INTO `user` (`id_int_user`, `nome_var_user`, `email_var_user`, `password_
 --
 
 --
--- Índices para tabela `user`
+-- Índices para tabela `users`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_int_user`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela `user`
+-- AUTO_INCREMENT de tabela `users`
 --
-ALTER TABLE `user`
-  MODIFY `id_int_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

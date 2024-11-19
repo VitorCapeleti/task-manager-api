@@ -12,15 +12,15 @@ class Update {
     public function updateUsuario() {
         $id = $_GET['id'];
         if (!empty($id)) {
-            $query = "SELECT * FROM user WHERE id_int_user = $id";
+            $query = "SELECT * FROM users WHERE id = $id";
             $excuteQuery = $this->connection->query($query);
             $verifica = mysqli_num_rows($excuteQuery);
 
             if ($verifica > 0) {
                 // Obtém os dados do usuário
                 $user_data = mysqli_fetch_assoc($excuteQuery);
-                $nome = $user_data['nome_var_user'];
-                $email = $user_data['email_var_user'];
+                $nome = $user_data['nome'];
+                $email = $user_data['email'];
 
                 // Retorna os dados como um array associativo
                 return ['nome' => $nome, 'email' => $email];

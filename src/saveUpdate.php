@@ -14,11 +14,11 @@ class SaveUpdate {
             $id = $_GET['id'];
             $nome = $_POST['name'];
             $email = $_POST['email'];
-            $querySave = "UPDATE user SET nome_var_user = '$nome', email_var_user = '$email' WHERE id_int_user = $id";
+            $querySave = "UPDATE users SET nome = '$nome', email = '$email' WHERE id = $id";
             $excuteQuerySave = $this->connection->query($querySave);
 
             if ($excuteQuerySave === TRUE) {
-                $sql_code = "SELECT email_var_user FROM user WHERE email_var_user='$email'";
+                $sql_code = "SELECT email FROM users WHERE email='$email'";
                 $sql_query = $this->connection->query($sql_code) or die("Erro no código sql");
                 $quantidade = $sql_query->num_rows;
                 if($quantidade == 1){
@@ -26,7 +26,7 @@ class SaveUpdate {
                     if(!isset($_SESSION)){
                         session_start();
                     }
-                    $_SESSION['email'] = $usuario['email_var_user'];
+                    $_SESSION['email'] = $usuario['email'];
                     header('Location: list.php');
                     return $excuteQuerySave;
                 }

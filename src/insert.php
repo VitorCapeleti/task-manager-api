@@ -15,13 +15,13 @@ class Insert{
             $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-            //$queryEmail = "SELECT email_var_user FROM user WHERE email_var_user = '$email' ";
+            //$queryEmail = "SELECT email FROM usuario WHERE email = '$email' ";
             //$busacaEmail = mysqli_query($this->connection, $queryEmail);
             //$verifica = mysqli_num_rows($busacaEmail);
-            $sql = "INSERT INTO user (nome_var_user, email_var_user, password_var_user) VALUES ('$nome', '$email', '$password')";
+            $sql = "INSERT INTO users (nome, email, senha) VALUES ('$nome', '$email', '$password')";
             $exquery = $this->connection->query($sql);
             if ($exquery === TRUE) {
-                $sql_code = "SELECT email_var_user FROM user WHERE email_var_user='$email'";
+                $sql_code = "SELECT email FROM usuario WHERE email='$email'";
                 $sql_query = $this->connection->query($sql_code) or die("Erro no código sql");
                 $quantidade = $sql_query->num_rows;
                 if($quantidade == 1){
@@ -29,7 +29,7 @@ class Insert{
                     if(!isset($_SESSION)){
                         session_start();
                     }
-                    $_SESSION['email'] = $usuario['email_var_user'];
+                    $_SESSION['email'] = $usuario['email'];
                 }
                 //echo "Usuário inserido com sucesso!";
                 //return true;
