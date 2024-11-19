@@ -1,0 +1,8 @@
+[phases.setup]
+commands = []
+
+[phases.build]
+commands = []
+
+[phases.start]
+commands = ["php -S 0.0.0.0:3000 -t src/"]
