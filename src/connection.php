@@ -6,7 +6,7 @@ class connectionClass {
     private $bdname;
 
     public function __construct() {
-        // Configure as variáveis de ambiente do Railway
+        // Configure as variáveis de ambiente do  Railway
         $this->localhost = $_ENV['MYSQLHOST'];       // Host do banco de dados
         $this->username = $_ENV['MYSQLUSER'];       // Usuário do banco de dados
         $this->password = $_ENV['MYSQLPASSWORD'];   // Senha do banco de dados
